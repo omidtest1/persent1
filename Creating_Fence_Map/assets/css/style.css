@@ -1,0 +1,57 @@
+/**
+ * استایل‌های سفارشی سیستم
+ * Custom styles for the geo-fencing system
+ */
+
+body {
+    font-family: 'Vazir', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+#map {
+    height: 100vh;
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #f8f9fa;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.fence-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* تنظیمات RTL برای Leaflet */
+.leaflet-control-container .leaflet-left {
+    right: 0;
+    left: auto;
+}
+
+.leaflet-control-container .leaflet-right {
+    left: 0;
+    right: auto;
+}
+
+/* responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        height: auto;
+    }
+    
+    #map {
+        height: 60vh;
+    }
+}

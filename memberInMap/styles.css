@@ -1,0 +1,338 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.map-container {
+    height: calc(100vh - 120px);
+}
+
+
+
+
+
+
+
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.status-bar {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+.status-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #212529;
+    margin-bottom: 0;
+}
+
+.btn-refresh {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+}
+
+@media (max-width: 576px) {
+    .status-text {
+        font-size: 1rem;
+    }
+    
+    .btn-refresh {
+        width: 100%;
+    }
+}
+
+
+
+
+/*
+/* مارکر کاربر *-/
+.user-icon {
+    background-color: #2563eb;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.user-icon i {
+    font-size: 16px;
+    transform: translateY(1px);
+}
+
+/* اثر نبض - نقطه مرکزی *-/
+.pulse-icon .outer-pulse {
+    width: 10px;
+    height: 10px;
+    background-color: #0d6efd;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: pulse 2s infinite;
+    position: relative;
+    z-index: 1000;
+}
+
+.pulse-icon .inner-pulse {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #0d6efd;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+}*/
+
+
+/* استایل‌های جدید برای سیستم موقعیت‌یابی */
+.user-marker {
+    background-color: #3498db;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.user-marker-inner {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    70% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+.warning {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+
+/*-----------------*/
+
+
+
+
+/* اسپینر */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.status-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #212529;
+    margin-bottom: 0;
+    white-space: pre-line; /* اجازه خط‌بندی دهنده */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* بهینه‌سازی مدال‌ها */
+.modal-content {
+    border-radius: 1rem;
+}
+
+.modal-header, .modal-footer {
+    border: none;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+/* انیمیشن ورود مدال */
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translate(0, -25px);
+}
+
+.modal.show .modal-dialog {
+    transform: translate(0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* بهینه‌سازی مدال‌ها */
+.modal-content {
+    border-radius: 1rem;
+}
+
+.modal-header, .modal-footer {
+    border: none;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+/* انیمیشن ورود مدال */
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translate(0, -25px);
+}
+
+.modal.show .modal-dialog {
+    transform: translate(0, 0);
+}
+
+/* نوتیفیکیشن موقت */
+.toast {
+    z-index: 9999;
+    min-width: 300px;
+    max-width: 400px;
+    opacity: 0.9;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
